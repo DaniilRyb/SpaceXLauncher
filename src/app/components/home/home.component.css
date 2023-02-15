@@ -1,0 +1,15 @@
+.background {
+  background: url('../../../assets/wallpaperflare.com_wallpaper.jpg') no-repeat fixed center center;
+
+  -webkit-background-size: cover;
+
+  -moz-background-size: cover;
+
+  -o-background-size: cover;
+
+  background-size: cover;
+}
+
+.letter {
+  letter-spacing: -2px;
+}

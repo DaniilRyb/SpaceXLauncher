@@ -1,0 +1,13 @@
+.text-small {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.color-nav {
+  background-color: rgba(156, 155, 155, 0.56);
+}
+
+.pointer {
+  cursor: pointer;
+}
