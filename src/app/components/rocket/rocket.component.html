@@ -1,14 +1,16 @@
-<div class="col p-lg-2">
-  <div class="card h-100">
-    <img [alt]="rocketType.name" [src]="rocketType.flickr_images[0]" class="card-img-top" height="350"
-         width="100">
-    <div class="card-body">
-      <h5 class="card-title">{{rocketType.name }}</h5>
-      <h6 class="card-text">Первый запуск - {{rocketType.first_flight | date}}</h6>
-      <p class="card-text text-lg-start">{{rocketType.description | limitSymbols: 90}}</p>
-      <a [routerLink]="rocketType.name.split(' ').join('').toLowerCase()" class="btn btn-primary">Подробнее</a>
+<a [routerLink]="rocketType.name.split(' ').join('').toLowerCase()"
+   class="text-decoration-none text-black">
+  <div class="col m-2 hover-card shadow">
+    <div class="card h-100">
+      <img [alt]="rocketType.name" [src]="rocketType.flickr_images[0]" class="card-img-top" height="350"
+           width="100">
+      <div class="card-body">
+        <h5 class="card-title">{{rocketType.name}}</h5>
+        <h6 class="card-text">Первый запуск - {{rocketType.first_flight | date}}</h6>
+        <p class="card-text text-lg-start">{{rocketType.description | limitSymbols: 90}}</p>
+      </div>
     </div>
   </div>
-</div>
+</a>
 
 

@@ -27,6 +27,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ScrollPageComponent } from './components/scroll-page/scroll-page.component'
 import { MatProgressBarModule } from "@angular/material/progress-bar";
 
+
 @NgModule({
   declarations: [
     AppComponent,
