@@ -17,13 +17,13 @@ export class HomeComponent {
   ]
 
   slideShowAnimation() {
-    return `background: url(${this.arrayImg[2]}) no-repeat fixed center center;
+    return `background: url('assets/img${2}.jpg') no-repeat fixed center center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover; `;
 
-  }
 
+  }
 
 }

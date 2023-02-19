@@ -8,7 +8,7 @@ import { IMissionRockets } from "../models/IMissionRockets";
 export class MissionService implements OnInit {
 
   missions: IMissionRockets[] = []
-  //urlData = "assets/AllMissionsRockets.json"
+  //urlData = "assets/missions.json"
   url = "https://api.spacexdata.com/v5/launches"
 
   constructor(private http: HttpClient) {
