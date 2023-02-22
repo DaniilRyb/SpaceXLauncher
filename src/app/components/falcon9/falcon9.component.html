@@ -129,10 +129,12 @@
     </tr>
     <tr *ngFor="let img of rocketsService.rockets[1].flickr_images" class="text-center">
       <th class="text-lg-start" scope="row">Изображения</th>
-      <td><img [alt]="rocketsService.rockets[1].name"
-               [src]="img"
-               [title]="rocketsService.rockets[2].name + 'rocket image'"
-               height="400" width="700"></td>
+      <td>
+        <img [alt]="rocketsService.rockets[1].name"
+             [src]="img"
+             [title]="rocketsService.rockets[2].name + 'rocket image'"
+             height="400" width="700">
+      </td>
     </tr>
     <tr>
       <th scope="row">Видео</th>

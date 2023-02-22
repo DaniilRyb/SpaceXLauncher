@@ -15,6 +15,10 @@ export class ListLaunchesComponent {
   IsShowed = false
   status = "Показать"
 
+  countsLaunch = ["1", "2", "3", "4", "5", "6", '7', "8", "9", "10", "11", "12", "13", "14"]
+  yearList = ["2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018",
+    "2019", "2020", "2021", "2022"]
+
   constructor(public rocketService: MissionService) {
 
   }

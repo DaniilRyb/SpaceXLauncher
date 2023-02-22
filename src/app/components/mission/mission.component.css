@@ -1,0 +1,42 @@
+/*
+.IsNotSuccess {
+  background: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: notsuccess 1.5s ease-out infinite;
+  display: inline-block;
+}
+
+@keyframes notsuccess {
+  0% {
+    background: red;
+    border: 0 solid red;
+  }
+  50% {
+    background: red;
+    border: 5px solid #fff;
+  }
+  100% {
+    background: red;
+    border: 0 solid #fff;
+  }
+}
+
+@keyframes success {
+  0% {
+    background: green;
+    border: 0 solid green;
+  }
+  50% {
+    background: green;
+    border: 5px solid #fff;
+  }
+  100% {
+    background: green;
+    border: 0 solid #fff;
+  }
+}
+
+
+*/

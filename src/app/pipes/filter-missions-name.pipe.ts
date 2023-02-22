@@ -9,8 +9,7 @@ export class FilterMissionsNamePipe implements PipeTransform {
   transform(mission: IMissionRockets[], missionName: string): IMissionRockets[] {
     if (missionName === "") return mission;
     return mission
-      .filter(name => name.name.toLowerCase()
-        .includes(missionName.toLowerCase()))
+      .filter(name => name.name.toLowerCase().includes(missionName.toLowerCase()))
   }
 
 }

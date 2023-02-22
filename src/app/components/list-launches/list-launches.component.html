@@ -1,74 +1,33 @@
 <div>
   <h2 class="font-bold text-center mt-4 mb-5 text-uppercase fw-bolder">Описание запусков</h2>
   <h3 class="fs-4 text-uppercase text-center">Поиск миссий</h3>
-  <div class="input-group">
-    <mat-form-field class="m-5 form-control">
+  <div class="text-center justify-content-center">
+    <mat-form-field class="m-2 p-2">
       <mat-label>Количество запусков ракеты</mat-label>
       <mat-select [(value)]="count">
-        <mat-option>-</mat-option>
-        <mat-option value="1">1</mat-option>
-        <mat-option value="2">2</mat-option>
-        <mat-option value="3">3</mat-option>
-        <mat-option value="4">4</mat-option>
-        <mat-option value="5">5</mat-option>
-        <mat-option value="6">6</mat-option>
-        <mat-option value="7">7</mat-option>
-        <mat-option value="8">8</mat-option>
-        <mat-option value="9">9</mat-option>
-        <mat-option value="10">10</mat-option>
-        <mat-option value="11">11</mat-option>
-        <mat-option value="12">12</mat-option>
-        <mat-option value="13">13</mat-option>
-        <mat-option value="14">14</mat-option>
+        <mat-option value="-">-</mat-option>
+        <mat-option *ngFor="let count of countsLaunch" [value]="count">{{count}}</mat-option>
       </mat-select>
     </mat-form-field>
-
-    <!-- <mat-form-field appearance="fill" class="p-2 m-4 form-control">
-       <mat-label>Год миссии (2006-2022)</mat-label>
-       <input [(ngModel)]="date" matInput placeholder="Например, 2019" type="text">
-     </mat-form-field>-->
-
-    <mat-form-field appearance="fill" class="m-5 form-control">
+    <mat-form-field appearance="fill" class="m-2 p-2">
       <mat-label>Год миссии</mat-label>
       <mat-select [(value)]="date">
         <mat-option>Выбрать год</mat-option>
-        <mat-option value="2006">2006</mat-option>
-        <mat-option value="2007">2007</mat-option>
-        <mat-option value="2008">2008</mat-option>
-        <mat-option value="2009">2009</mat-option>
-        <mat-option value="2010">2010</mat-option>
-        <mat-option value="2011">2011</mat-option>
-        <mat-option value="2012">2012</mat-option>
-        <mat-option value="2013">2013</mat-option>
-        <mat-option value="2014">2014</mat-option>
-        <mat-option value="2015">2015</mat-option>
-        <mat-option value="2016">2016</mat-option>
-        <mat-option value="2017">2017</mat-option>
-        <mat-option value="2018">2018</mat-option>
-        <mat-option value="2019">2019</mat-option>
-        <mat-option value="2020">2020</mat-option>
-        <mat-option value="2021">2021</mat-option>
-        <mat-option value="2022">2022</mat-option>
+        <mat-option *ngFor="let year of yearList" [value]="year">{{year}}</mat-option>
       </mat-select>
     </mat-form-field>
-
-
-    <mat-form-field appearance="fill" class="p-2 m-5 form-control">
+    <mat-form-field appearance="fill" class="m-2 p-2">
       <mat-label>Название миссии</mat-label>
       <input [(ngModel)]="name" matInput placeholder="Например, CRS-20" type="text">
     </mat-form-field>
-
-    <mat-form-field appearance="fill" class="p-2 m-5 form-control">
+    <mat-form-field appearance="fill" class="m-2 p-2">
       <mat-label>Посадка первой ступени</mat-label>
       <mat-select [(value)]="landing_success">
-        <mat-option>Выбрать тип</mat-option>
         <mat-option [value]="true">Успешная</mat-option>
         <mat-option [value]="false">Неуспешная</mat-option>
       </mat-select>
     </mat-form-field>
-
   </div>
-
   <div>
     <h2 class="fs-5 mb-3 mt-3 text-center">Подробное описание выбранной миссии</h2>
     <div class="d-flex">
@@ -85,10 +44,10 @@
        | filterIsSuccessLaunch : landing_success"
                      [mission]="rocket">
         </app-mission>
-        <!-- <div class="fs-5 mb-5 mt-5 text-center text-uppercase"
-              *ngIf="!rocketService.missions[0].id"><h3>Миссия не найдена</h3></div>
-       -->
       </div>
+    </div>
+    <div *ngIf="false">
+      <h2 class="fs-5 mb-3 mt-3 text-center">По данному запросу миссии не найдены</h2>
     </div>
   </div>
 </div>

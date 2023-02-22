@@ -23,7 +23,6 @@ export class HomeComponent {
     -moz-background-size: cover;
     -o-background-size: cover; `;
 
-
   }
 
 }

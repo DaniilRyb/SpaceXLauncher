@@ -6,7 +6,7 @@ import { IMissionRockets } from "../models/IMissionRockets";
 })
 export class FilterDatePipe implements PipeTransform {
   transform(mission: IMissionRockets[], dateMission: string): IMissionRockets[] {
-    if (dateMission === "") return mission;
+    if (dateMission === "" || dateMission == "Выбрать год") return mission;
     /*return mission
       .filter(date => date.date_local.toLowerCase()
         .includes(dateMission.toLowerCase()))*/

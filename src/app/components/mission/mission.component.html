@@ -3,7 +3,9 @@
     <tbody>
     <tr>
       <th scope="col">Миссия</th>
-      <th scope="col">{{mission.name}}</th>
+      <th scope="col" [title]="mission.cores[0].landing_success ? 'миссия успешная' : 'миссия не успешная'">
+        {{mission.name}}
+      </th>
     </tr>
     <tr>
       <th scope="col">Дата запуска</th>
@@ -27,7 +29,9 @@
     </tr>
     <tr>
       <th scope="col">Посадка первой ступени</th>
-      <th scope="col">{{mission.cores[0].landing_success ? "успешная" : "не успешная/не запланирован"}}</th>
+      <th scope="col" [style.color]="mission.cores[0].landing_success ? 'green' : 'red'">
+        {{mission.cores[0].landing_success ? "успешная" : "не успешная/не запланирована"}}
+      </th>
     </tr>
     <tr>
       <th scope="col">Логотип миссии</th>

@@ -11,7 +11,6 @@ export class MissionComponent {
 
   @Input() mission: IMissionRockets
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() {
   }
 
