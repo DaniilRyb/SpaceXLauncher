@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MissionService } from "../../service/mission.service";
+import { FormControl } from "@angular/forms";
+import { map, Observable, startWith } from "rxjs";
 
 
 @Component({
@@ -7,20 +9,29 @@ import { MissionService } from "../../service/mission.service";
   templateUrl: './list-launches.component.html',
   styleUrls: ['./list-launches.component.css']
 })
-export class ListLaunchesComponent {
+export class ListLaunchesComponent implements OnInit {
+
+  @Output() year: EventEmitter<string> = new EventEmitter<string>()
   name = ""
   date = ""
   landing_success: boolean
   count = "" // здесь лучше сделать все типы string так как input видимо не обрабатывает тип number
   IsShowed = false
   status = "Показать"
-
   countsLaunch = ["1", "2", "3", "4", "5", "6", '7', "8", "9", "10", "11", "12", "13", "14"]
   yearList = ["2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018",
     "2019", "2020", "2021", "2022"]
+  myControl = new FormControl('');
+  mission: string[]
+  filteredOptions: Observable<string[]>;
 
-  constructor(public rocketService: MissionService) {
+  constructor(public readonly rocketService: MissionService) {
 
+  }
+
+  EmitYear(year: string) {
+    this.year.emit(year);
+    console.log("year ", year);
   }
 
   IsShowAllMissions() {
@@ -33,4 +44,25 @@ export class ListLaunchesComponent {
     }
   }
 
+  _missionListNameAll(): string[] {
+    const missionsNameList: string[] = [];
+    const rocketsService = this.rocketService.missions;
+    for (let i = 0; i < rocketsService.length; i++) {
+      missionsNameList.push(rocketsService[i].name);
+    }
+    return missionsNameList;
+  }
+
+
+  ngOnInit() {
+    this.mission = this._missionListNameAll()
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value || '')),
+    );
+  }
+
+  private _filter(value: string): string[] {
+    return this.mission.filter(option => option.toLowerCase().includes(value.toLowerCase()));
+  }
 }

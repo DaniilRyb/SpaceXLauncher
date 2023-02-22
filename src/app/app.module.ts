@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -8,7 +8,7 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
 import { ListLaunchesComponent } from './components/list-launches/list-launches.component';
 import { MissionComponent } from './components/mission/mission.component';
 import { HttpClientModule } from "@angular/common/http";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FilterMissionsNamePipe } from './pipes/filter-missions-name.pipe';
 import { FilterDatePipe } from './pipes/filter-date.pipe';
 import { RocketsComponent } from './components/rockets/rockets.component';
@@ -26,6 +26,8 @@ import { MatSelectModule } from "@angular/material/select";
 import { MatInputModule } from '@angular/material/input';
 import { ScrollPageComponent } from './components/scroll-page/scroll-page.component'
 import { MatProgressBarModule } from "@angular/material/progress-bar";
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import { MdbCarouselModule } from "mdb-angular-ui-kit/carousel";
 
 
 @NgModule({
@@ -57,7 +59,11 @@ import { MatProgressBarModule } from "@angular/material/progress-bar";
     MatOptionModule,
     MatSelectModule,
     MatInputModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    MdbCheckboxModule,
+    MdbCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

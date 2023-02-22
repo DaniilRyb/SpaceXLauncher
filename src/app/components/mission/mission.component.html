@@ -1,84 +1,96 @@
-<div class="form-check w-50 justify-content-center m-auto p-5 font">
-  <table class="table">
+<div class="form-check justify-content-center m-auto p-5 font">
+  <table class="table table-striped table-hover">
     <tbody>
     <tr>
-      <th scope="col">Миссия</th>
-      <th scope="col" [title]="mission.cores[0].landing_success ? 'миссия успешная' : 'миссия не успешная'">
+      <th scope="col">
+        <h5>Миссия</h5>
+      </th>
+      <th [title]="mission.cores[0].landing_success ? 'миссия успешная' : 'миссия не успешная'" scope="col">
         {{mission.name}}
       </th>
     </tr>
     <tr>
-      <th scope="col">Дата запуска</th>
+      <th scope="col">
+        <h5>Дата запуска</h5>
+      </th>
       <th scope="col">{{mission.date_local | date: "medium"}}</th>
     </tr>
     <tr>
-      <th scope="col">Номер запуска компании</th>
+      <th scope="col">
+        <h5>Номер запуска компании</h5>
+      </th>
       <th scope="col">{{mission.flight_number}}</th>
     </tr>
     <tr>
-      <th scope="col">Количество запусков ракеты</th>
+      <th scope="col">
+        <h5>Количество запусков ракеты</h5>
+      </th>
       <th scope="col">{{mission.cores[0].flight !== null ? mission.cores[0].flight : "неизвестно" }}</th>
     </tr>
     <tr>
-      <th scope="col">Возврат</th>
+      <th scope="col">
+        <h5>Возврат</h5>
+      </th>
       <th scope="col">{{mission.cores[0].landing_attempt ? "запланирован" : "не запланирован"}}</th>
     </tr>
     <tr>
-      <th scope="col">Посадка на плавучую платформу</th>
+      <th scope="col">
+        <h5>Посадка на плавучую платформу</h5>
+      </th>
       <th scope="col">{{mission.cores[0].gridfins ? "запланирован" : "не запланирован"}}</th>
     </tr>
     <tr>
-      <th scope="col">Посадка первой ступени</th>
-      <th scope="col" [style.color]="mission.cores[0].landing_success ? 'green' : 'red'">
+      <th scope="col">
+        <h5>Посадка первой ступени
+        </h5>
+      </th>
+      <th [style.color]="mission.cores[0].landing_success ? 'green' : 'red'" scope="col">
         {{mission.cores[0].landing_success ? "успешная" : "не успешная/не запланирована"}}
       </th>
     </tr>
     <tr>
-      <th scope="col">Логотип миссии</th>
+      <th scope="col">
+        <h5>Логотип миссии</h5>
+      </th>
       <th scope="col">
         <img [src]="mission.links.patch.small" height="100" width="100">
       </th>
     </tr>
     <tr>
-      <th scope="col">Описание</th>
+      <th scope="col">
+        <h5>Описание</h5>
+      </th>
       <th scope="col">{{mission.details ? mission.details : "-"}}</th>
     </tr>
     <tr>
-      <th scope="col">Wikipedia</th>
       <th scope="col">
-        <a [href]="mission.links.wikipedia" class="text-decoration-none">Статья
-        </a>
+        <h5>Wikipedia</h5></th>
+      <th scope="col">
+        <a [href]="mission.links.wikipedia" class="text-decoration-none">Статья</a>
       </th>
     </tr>
     <tr>
-      <th scope="col">Видео запуска</th>
       <th scope="col">
-        <a [href]="mission.links.webcast" class="text-decoration-none">Трансляция
-        </a>
+        <h5>Видео запуска</h5>
+      </th>
+      <th scope="col">
+        <a [href]="mission.links.webcast" class="text-decoration-none">Трансляция</a>
       </th>
     </tr>
     <tr>
-      <th scope="col">Описание ракет</th>
       <th scope="col">
-        <a class="text-decoration-none" routerLink="/rockets">Ракеты
-        </a>
+        <h5>Описание ракет</h5>
+      </th>
+      <th scope="col">
+        <a class="text-decoration-none" routerLink="/rockets">Ракеты</a>
       </th>
     </tr>
     <tr>
-      <th scope="col">ID миссии</th>
+      <th scope="col">
+        <h5>ID миссии</h5>
+      </th>
       <th scope="col">{{mission.id}}</th>
     </tr>
-    <!--<tr>
-     <th scope="col">Фото запуска</th>
-     <th scope="сol">
-       <img [src]="mission.links.flickr.original[0]" width="300" height="300" class="shadow">
-     </th>
-    </tr>-->
-    <!--<tr>
-      <th><img [src]="mission.links.flickr.original[0]" width="300" height="300" class="shadow"></th>
-      <td><img [src]="mission.links.flickr.original[1]" width="300" height="300" class="shadow"></td>
-      <td><img [src]="mission.links.flickr.original[2]" width="300" height="300" class="shadow"></td>
-    </tr>-->
     </tbody>
   </table>
 </div>

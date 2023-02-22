@@ -1,7 +1,8 @@
 <div>
   <h2 class="font-bold text-center mt-4 mb-5 text-uppercase fw-bolder">Описание запусков</h2>
   <h3 class="fs-4 text-uppercase text-center">Поиск миссий</h3>
-  <div class="text-center justify-content-center">
+  <div class="text-center">
+
     <mat-form-field class="m-2 p-2">
       <mat-label>Количество запусков ракеты</mat-label>
       <mat-select [(value)]="count">
@@ -9,17 +10,41 @@
         <mat-option *ngFor="let count of countsLaunch" [value]="count">{{count}}</mat-option>
       </mat-select>
     </mat-form-field>
+
     <mat-form-field appearance="fill" class="m-2 p-2">
       <mat-label>Год миссии</mat-label>
-      <mat-select [(value)]="date">
+      <mat-select (focus)="EmitYear(date)" [(value)]="date">
         <mat-option>Выбрать год</mat-option>
         <mat-option *ngFor="let year of yearList" [value]="year">{{year}}</mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field appearance="fill" class="m-2 p-2">
-      <mat-label>Название миссии</mat-label>
-      <input [(ngModel)]="name" matInput placeholder="Например, CRS-20" type="text">
-    </mat-form-field>
+
+    <!--
+        <mat-form-field appearance="fill" class="m-2 p-2">
+          <mat-label>Название миссии</mat-label>
+          <input [(ngModel)]="name" matInput placeholder="Например, CRS-20" type="text">
+        </mat-form-field>
+    -->
+
+    <form class="example-form d-inline m-2 p-2">
+      <mat-form-field appearance="fill" class="example-full-width">
+        <mat-label>Название миссии</mat-label>
+        <input [(ngModel)]="name"
+               [formControl]="myControl"
+               [matAutocomplete]="auto"
+               aria-label="Поиск по миссии"
+               matInput
+               placeholder="Введите название миссии"
+               type="text">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+
+
     <mat-form-field appearance="fill" class="m-2 p-2">
       <mat-label>Посадка первой ступени</mat-label>
       <mat-select [(value)]="landing_success">
@@ -27,6 +52,8 @@
         <mat-option [value]="false">Неуспешная</mat-option>
       </mat-select>
     </mat-form-field>
+
+
   </div>
   <div>
     <h2 class="fs-5 mb-3 mt-3 text-center">Подробное описание выбранной миссии</h2>
