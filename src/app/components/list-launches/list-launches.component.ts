@@ -1,7 +1,8 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MissionService } from "../../service/mission.service";
 import { FormControl } from "@angular/forms";
 import { map, Observable, startWith } from "rxjs";
+import { IMissionRockets } from "../../models/IMissionRockets";
 
 
 @Component({
@@ -12,6 +13,7 @@ import { map, Observable, startWith } from "rxjs";
 export class ListLaunchesComponent implements OnInit {
 
   @Output() year: EventEmitter<string> = new EventEmitter<string>()
+  @Input() missionListName: IMissionRockets[]
   name = ""
   date = ""
   landing_success: boolean
@@ -25,7 +27,8 @@ export class ListLaunchesComponent implements OnInit {
   mission: string[]
   filteredOptions: Observable<string[]>;
 
-  constructor(public readonly rocketService: MissionService) {
+  constructor(public missionService: MissionService) {
+    console.log("constructor");
 
   }
 
@@ -46,23 +49,38 @@ export class ListLaunchesComponent implements OnInit {
 
   _missionListNameAll(): string[] {
     const missionsNameList: string[] = [];
-    const rocketsService = this.rocketService.missions;
+    const rocketsService = this.missionService.missions;
     for (let i = 0; i < rocketsService.length; i++) {
       missionsNameList.push(rocketsService[i].name);
     }
     return missionsNameList;
   }
 
-
   ngOnInit() {
+    console.log("ngOnInit");
     this.mission = this._missionListNameAll()
+    //console.log(this.missionService.missions);
+    this.missionListName = this.missionService.missions
+    console.log(this.missionListName);
+    //this.mission = this._missionListNameAll()
+    //console.log("mission", this.mission);
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value || '')),
-    );
+    )
   }
 
   private _filter(value: string): string[] {
     return this.mission.filter(option => option.toLowerCase().includes(value.toLowerCase()));
   }
+
+  /* ngAfterContentChecked(): void {
+     console.log("AfterContentChecked");
+   }*/
+
+  /*ngOnChanges(changes: SimpleChanges): void {
+    console.log("changes", changes);
+  }*/
+
+
 }

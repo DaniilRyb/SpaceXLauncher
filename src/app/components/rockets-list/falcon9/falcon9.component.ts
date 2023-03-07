@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RocketsService } from "../../service/rockets.service";
+import { RocketsService } from "../../../service/rockets.service";
 
 @Component({
   selector: 'app-falcon9',

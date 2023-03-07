@@ -6,7 +6,7 @@
     <mat-form-field class="m-2 p-2">
       <mat-label>Количество запусков ракеты</mat-label>
       <mat-select [(value)]="count">
-        <mat-option value="-">-</mat-option>
+        <mat-option [value]="'Показать все'">Показать все</mat-option>
         <mat-option *ngFor="let count of countsLaunch" [value]="count">{{count}}</mat-option>
       </mat-select>
     </mat-form-field>
@@ -19,13 +19,6 @@
       </mat-select>
     </mat-form-field>
 
-    <!--
-        <mat-form-field appearance="fill" class="m-2 p-2">
-          <mat-label>Название миссии</mat-label>
-          <input [(ngModel)]="name" matInput placeholder="Например, CRS-20" type="text">
-        </mat-form-field>
-    -->
-
     <form class="example-form d-inline m-2 p-2">
       <mat-form-field appearance="fill" class="example-full-width">
         <mat-label>Название миссии</mat-label>
@@ -37,8 +30,8 @@
                placeholder="Введите название миссии"
                type="text">
         <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-            {{option}}
+          <mat-option *ngFor="let mission of filteredOptions | async" [value]="mission">
+            {{mission}}
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
@@ -63,18 +56,13 @@
       </button>
     </div>
     <div *ngIf="!IsShowed">
-      <div *ngIf="rocketService.missions">
-        <app-mission *ngFor="let rocket of rocketService.missions
+      <div *ngIf="missionService.missions">
+        <app-mission *ngFor="let rocket of missionService.missions
        | filterDate : date
        | filterCountLaunchRocket : count
        | filterMissionsName : name
-       | filterIsSuccessLaunch : landing_success"
-                     [mission]="rocket">
-        </app-mission>
+       | filterIsSuccessLaunch : landing_success;" [mission]="rocket"/>
       </div>
-    </div>
-    <div *ngIf="false">
-      <h2 class="fs-5 mb-3 mt-3 text-center">По данному запросу миссии не найдены</h2>
     </div>
   </div>
 </div>

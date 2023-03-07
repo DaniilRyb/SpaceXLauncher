@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MissionService } from "./service/mission.service";
 import { RocketsService } from "./service/rockets.service";
+import { MissionService } from "./service/mission.service";
 
 @Component({
   selector: 'app-root',
@@ -8,8 +8,8 @@ import { RocketsService } from "./service/rockets.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private missionService: MissionService,
-              public rocketsService: RocketsService) {
+  constructor(public rocketsService: RocketsService,
+              public missionService: MissionService) {
   }
 
   ngOnInit() {

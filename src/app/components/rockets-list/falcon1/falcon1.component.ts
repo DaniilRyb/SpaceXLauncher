@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { IRocket } from "../../models/IRocket";
-import { RocketsService } from "../../service/rockets.service";
+import { IRocket } from "../../../models/IRocket";
+import { RocketsService } from "../../../service/rockets.service";
 
 @Component({
   selector: 'app-falcon1',
