@@ -1,0 +1,91 @@
+{
+  "MAIN_PAGE": {
+    "HEADER": {
+      "LOGO_DESC": "Service for tracking space launches",
+      "HOME_PAGE": "Home",
+      "LAUNCH_PAGE": "Launches SpaceX",
+      "ROCKETS_PAGE": "Rockets"
+    },
+    "MAIN": {
+      "DESCRIPTION": "HELLO! THIS SERVICE WAS CREATED TO TRACK SPACEX LAUNCHES. HERE YOU CAN FIND INFORMATION ABOUT PAST LAUNCHES AND ROCKET DESCRIPTIONS"
+    }
+  },
+  "DESCRIPTION_LAUNCH_PAGE": {
+    "TITLE_PAGE": "Launch description",
+    "SEARCH_MISSIONS": "Missions search",
+    "SEARCH": {
+      "SHOW_ALL": "Show all",
+      "COUNT_LAUNCHES_ROCKETS": "Number of rocket launches",
+      "YEAR": "Mission year",
+      "YEAR_SELECT": "Select year",
+      "MISSION_NAME": "Mission name",
+      "FIRST STAGE LANDING": "First stage landing",
+      "NAME_MISSION_PLACEHOLDER": "Enter a mission name",
+      "IS_SUCCESS": {
+        "SUCCESSFUL": "Successful",
+        "UNSUCCESSFUL": "Unsuccessful"
+      },
+      "DETAILED_DESCRIPTION": "Detailed description of the chosen mission",
+      "BUTTON_SHOW_MISSIONS": "missions",
+      "BUTTON_IS_SHOW_MISSIONS": {
+        "SHOW": "Show",
+        "HIDE": "Hide"
+      }
+    },
+    "DESCRIPTION_MISSION_LIST": {
+      "MISSION": "Mission",
+      "YEAR": "Date",
+      "NUMBER_LAUNCH_COMPANY": "Company launch number",
+      "COUNT_LAUNCH_COMPANY": "Number of rocket launches",
+      "RETURN": "Return",
+      "FLOATING_PLATFORM": "Landing on a floating platform",
+      "LOGO": "Mission icon",
+      "LANDING_THE_FIRST_STAGE": "First stage landing",
+      "DESCRIPTION_MISSION": "Mission description",
+      "VIDEO_LAUNCH": "Launch video",
+      "DESCRIPTION_ROCKETS": "Rockets description",
+      "MISSION_ID": "Mission ID",
+      "LANDING_ATTEMPT": {
+        "SCHEDULED": "scheduled",
+        "NOT_SCHEDULED": "not scheduled"
+      }
+    }
+  },
+  "ROCKETS": {
+    "DETAILED_DESCRIPTION": "Detailed description",
+    "DESCRIPTION_ROCKETS": "Rockets description",
+    "ROCKETS_FAMILY": "Rocket family",
+    "IN_OPERATION": "In operation",
+    "COUNTRY": "Country",
+    "COMPANY": "Company",
+    "FIRST_FLIGHT": "First flight",
+    "LAUNCH_COST": "Launch cost",
+    "DESCRIPTION": "Description",
+    "HEIGHT": "Height",
+    "DIAMETER": "Diameter",
+    "NUMBER_OF_STEPS": "Number of steps",
+    "NUMBERS_OF_SIDE_BOOSTERS": "Number of side boosters",
+    "ARTICLE": "Article",
+    "TOTAL_WEIGHT": "Total weight",
+    "THRUST_SEE_LEVEL": "Thrust of the first stage above sea level",
+    "THRUST_VACUUM": "Thrust of the first stage in vacuum",
+    "REUSABLE": "Reusable",
+    "NUMBER_ENGINES": "Number of first stage engines",
+    "FUEL": "Fuel weight",
+    "OPERATING": "Operating time of the first stage",
+    "THRUST_SECOND_STAGE": "Thrust of the second stage",
+    "HEIGHT_HEAD_FAIRING": "Height of the head fairing",
+    "DIAMETER_HEAD_FAIRING": "Diameter of the head fairing",
+    "MATERIAL": "Material",
+    "FUEL_SECOND_STAGE": "Fuel mass of the second stage",
+    "TIME_SECOND_STAGE": "Total operating time of the second stage",
+    "ENGINE_TYPE": "Engine type",
+    "FIRST_STAGE_FUEL": "First stage fuel",
+    "SECOND_STAGE_FUEL": "Second stage fuel",
+    "NUMBER_LANDING_LEGS": "Number of landing legs",
+    "MATERIAL_LEGS": "Material",
+    "IMAGES": "Images"
+  },
+  "FIRST_LAUNCH": "First launch",
+  "BUTTON_UP": "UP"
+}

@@ -37,15 +37,6 @@ export class ListLaunchesComponent implements OnInit {
     console.log("year ", year);
   }
 
-  IsShowAllMissions() {
-    this.IsShowed = !this.IsShowed
-    if (!this.IsShowed) {
-      this.status = "Скрыть"
-    }
-    if (this.IsShowed) {
-      this.status = "Показать"
-    }
-  }
 
   _missionListNameAll(): string[] {
     const missionsNameList: string[] = [];

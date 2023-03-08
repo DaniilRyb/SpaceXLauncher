@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RocketsService } from "./service/rockets.service";
 import { MissionService } from "./service/mission.service";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,8 @@ import { MissionService } from "./service/mission.service";
 })
 export class AppComponent implements OnInit {
   constructor(public rocketsService: RocketsService,
-              public missionService: MissionService) {
+              public missionService: MissionService,
+              public translate: TranslateService) {
   }
 
   ngOnInit() {

@@ -1,27 +1,30 @@
 <div>
-  <h2 class="font-bold text-center mt-4 mb-5 text-uppercase fw-bolder">Описание запусков</h2>
-  <h3 class="fs-4 text-uppercase text-center">Поиск миссий</h3>
+  <h2
+    class="font-bold text-center mt-4 mb-5 text-uppercase fw-bolder">{{'DESCRIPTION_LAUNCH_PAGE.TITLE_PAGE' | translate}}
+  </h2>
+  <h3 class="fs-4 text-uppercase text-center">{{'DESCRIPTION_LAUNCH_PAGE.SEARCH_MISSIONS' | translate}}</h3>
   <div class="text-center">
 
     <mat-form-field class="m-2 p-2">
-      <mat-label>Количество запусков ракеты</mat-label>
+      <mat-label>{{'DESCRIPTION_LAUNCH_PAGE.SEARCH.COUNT_LAUNCHES_ROCKETS' | translate}}</mat-label>
       <mat-select [(value)]="count">
-        <mat-option [value]="'Показать все'">Показать все</mat-option>
+        <mat-option [value]="'Показать все'">{{'DESCRIPTION_LAUNCH_PAGE.SEARCH.SHOW_ALL' | translate | uppercase}}
+        </mat-option>
         <mat-option *ngFor="let count of countsLaunch" [value]="count">{{count}}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="m-2 p-2">
-      <mat-label>Год миссии</mat-label>
+      <mat-label>{{'DESCRIPTION_LAUNCH_PAGE.SEARCH.YEAR' | translate}}</mat-label>
       <mat-select (focus)="EmitYear(date)" [(value)]="date">
-        <mat-option>Выбрать год</mat-option>
+        <mat-option>{{'DESCRIPTION_LAUNCH_PAGE.SEARCH.YEAR_SELECT' | translate }}</mat-option>
         <mat-option *ngFor="let year of yearList" [value]="year">{{year}}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <form class="example-form d-inline m-2 p-2">
       <mat-form-field appearance="fill" class="example-full-width">
-        <mat-label>Название миссии</mat-label>
+        <mat-label>{{'DESCRIPTION_LAUNCH_PAGE.SEARCH.MISSION_NAME' | translate }}</mat-label>
         <input [(ngModel)]="name"
                [formControl]="myControl"
                [matAutocomplete]="auto"
@@ -39,20 +42,30 @@
 
 
     <mat-form-field appearance="fill" class="m-2 p-2">
-      <mat-label>Посадка первой ступени</mat-label>
+      <mat-label>{{'DESCRIPTION_LAUNCH_PAGE.SEARCH.FIRST STAGE LANDING' | translate }}</mat-label>
       <mat-select [(value)]="landing_success">
-        <mat-option [value]="true">Успешная</mat-option>
-        <mat-option [value]="false">Неуспешная</mat-option>
+        <mat-option [value]="true">{{'DESCRIPTION_LAUNCH_PAGE.SEARCH.IS_SUCCESS.SUCCESSFUL' | translate }}</mat-option>
+        <mat-option
+          [value]="false">{{'DESCRIPTION_LAUNCH_PAGE.SEARCH.IS_SUCCESS.UNSUCCESSFUL' | translate }}</mat-option>
       </mat-select>
     </mat-form-field>
 
 
   </div>
   <div>
-    <h2 class="fs-5 mb-3 mt-3 text-center">Подробное описание выбранной миссии</h2>
+    <h2 class="fs-5 mb-3 mt-3 text-center">{{'DESCRIPTION_LAUNCH_PAGE.SEARCH.DETAILED_DESCRIPTION' | translate }}</h2>
     <div class="d-flex">
-      <button (click)="IsShowAllMissions()" class="btn btn-primary mx-auto mt-0"
-              type="button">{{status}} миссии
+      <button (click)="this.IsShowed = !this.IsShowed" class="btn btn-primary mx-auto mt-0"
+              type="button">
+        <p *ngIf="IsShowed"
+           class="p-0 m-1">{{ 'DESCRIPTION_LAUNCH_PAGE.SEARCH.BUTTON_IS_SHOW_MISSIONS.SHOW' | translate}}
+          {{'DESCRIPTION_LAUNCH_PAGE.SEARCH.BUTTON_SHOW_MISSIONS' | translate}}
+        </p>
+        <p *ngIf="!IsShowed"
+           class="p-0 m-1">{{'DESCRIPTION_LAUNCH_PAGE.SEARCH.BUTTON_IS_SHOW_MISSIONS.HIDE' | translate}}
+          {{'DESCRIPTION_LAUNCH_PAGE.SEARCH.BUTTON_SHOW_MISSIONS' | translate}}
+        </p>
+
       </button>
     </div>
     <div *ngIf="!IsShowed">

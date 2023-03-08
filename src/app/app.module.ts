@@ -7,7 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { ListLaunchesComponent } from './components/list-launches/list-launches.component';
 import { MissionComponent } from './components/mission/mission.component';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FilterMissionsNamePipe } from './pipes/filter-missions-name.pipe';
 import { FilterDatePipe } from './pipes/filter-date.pipe';
@@ -29,7 +29,13 @@ import { MatProgressBarModule } from "@angular/material/progress-bar";
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { MdbCarouselModule } from "mdb-angular-ui-kit/carousel";
 import { MenuComponent } from './components/menu/menu.component';
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -65,7 +71,15 @@ import { MenuComponent } from './components/menu/menu.component';
     ReactiveFormsModule,
     MatAutocompleteModule,
     MdbCheckboxModule,
-    MdbCarouselModule
+    MdbCarouselModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      },
+      defaultLanguage: 'ru'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
