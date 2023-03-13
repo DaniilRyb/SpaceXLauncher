@@ -12,9 +12,8 @@ export class RocketsService {
   constructor(private http: HttpClient) {
   }
 
-  urlRockets = "https://api.spacexdata.com/v4/rockets"
   getDataRockets() {
-    return this.http.get<IRocket[]>(this.urlRockets)
+    return this.http.get<IRocket[]>("https://api.spacexdata.com/v4/rockets")
       .subscribe((data: IRocket[]) => {
         this.rockets = data
         console.log(this.rockets);

@@ -39,12 +39,12 @@
         <h5>{{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.RETURN' | translate}}
         </h5>
       </th>
-      <th scope="col"
-          *ngIf="mission.cores[0].landing_attempt">
+      <th *ngIf="mission.cores[0].landing_attempt"
+          scope="col">
         {{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.LANDING_ATTEMPT.SCHEDULED' | translate}}
       </th>
-      <th scope="col"
-          *ngIf="!mission.cores[0].landing_attempt">
+      <th *ngIf="!mission.cores[0].landing_attempt"
+          scope="col">
         {{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.LANDING_ATTEMPT.NOT_SCHEDULED' | translate}}
       </th>
     </tr>
@@ -53,10 +53,10 @@
         <h5>{{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.FLOATING_PLATFORM' | translate}}
         </h5>
       </th>
-      <th scope="col" *ngIf="mission.cores[0].gridfins">
+      <th *ngIf="mission.cores[0].gridfins" scope="col">
         {{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.LANDING_ATTEMPT.SCHEDULED' | translate}}
       </th>
-      <th scope="col" *ngIf="!mission.cores[0].gridfins">
+      <th *ngIf="!mission.cores[0].gridfins" scope="col">
         {{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.LANDING_ATTEMPT.NOT_SCHEDULED' | translate}}
       </th>
     </tr>
