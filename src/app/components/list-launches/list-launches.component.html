@@ -30,7 +30,7 @@
                [matAutocomplete]="auto"
                aria-label="Поиск по миссии"
                matInput
-               placeholder="Введите название миссии"
+               placeholder="{{'DESCRIPTION_LAUNCH_PAGE.SEARCH.PLACEHOLDER' | translate }}"
                type="text">
         <mat-autocomplete #auto="matAutocomplete">
           <mat-option *ngFor="let mission of filteredOptions | async" [value]="mission">

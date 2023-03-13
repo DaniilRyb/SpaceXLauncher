@@ -14,10 +14,16 @@ export class AppComponent implements OnInit {
               public translate: TranslateService) {
   }
 
+
   ngOnInit() {
     this.missionService.getDataLaunch()
     this.rocketsService.getDataRockets()
 
+  }
+
+  setLocale(locale: string) {
+    localStorage.setItem('locale', locale)
+    this.translate.use(locale)
   }
 
 

@@ -19,6 +19,7 @@
       "YEAR": "Mission year",
       "YEAR_SELECT": "Select year",
       "MISSION_NAME": "Mission name",
+      "PLACEHOLDER": "Enter mission name",
       "FIRST STAGE LANDING": "First stage landing",
       "NAME_MISSION_PLACEHOLDER": "Enter a mission name",
       "IS_SUCCESS": {
@@ -61,6 +62,10 @@
     "FIRST_FLIGHT": "First flight",
     "LAUNCH_COST": "Launch cost",
     "DESCRIPTION": "Description",
+    "DESCRIPTION_ROCKET_FALCON1": "The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch vehicle to go into orbit around the Earth.",
+    "DESCRIPTION_ROCKET_FALCON9": "Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit.",
+    "DESCRIPTION_ROCKET_FALCON_HEAVY": "With the ability to lift into orbit over 54 metric tons (119,000 lb)--a mass equivalent to a 737 jetliner loaded with passengers, crew, luggage and fuel--Falcon Heavy can lift more than twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost.",
+    "DESCRIPTION_ROCKET_STARSHIP": "Starship and Super Heavy Rocket represent a fully reusable transportation system designed to service all Earth orbit needs as well as the Moon and Mars. This two-stage vehicle — composed of the Super Heavy rocket (booster) and Starship (ship) — will eventually replace Falcon 9, Falcon Heavy and Dragon.",
     "HEIGHT": "Height",
     "DIAMETER": "Diameter",
     "NUMBER_OF_STEPS": "Number of steps",
@@ -87,5 +92,14 @@
     "IMAGES": "Images"
   },
   "FIRST_LAUNCH": "First launch",
-  "BUTTON_UP": "UP"
+  "BUTTON_UP": "UP",
+  "METRICS_SYSTEM": {
+    "OPERATION_YES": "yes",
+    "OPERATION_NO": "no",
+    "METERS": "m",
+    "TONS": "t",
+    "SECONDS": "sec",
+    "NEWTON": "kN",
+    "WEIGHT": "kg"
+  }
 }

@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
     <div class="container-fluid">
       <div>
         <img
@@ -11,12 +11,14 @@
       <div class="navbar-brand pointer-event pointer" routerLink="/">SpaceX Launcher<br>
         <span class="text-small fw-bold">{{"MAIN_PAGE.HEADER.LOGO_DESC" | translate }}</span>
       </div>
-      <button (click)="menu.show()" aria-controls="navbarNav"
+      <button (click)="menu.show()"
+              aria-controls="navbarNav"
               aria-expanded="false"
               aria-label="Toggle navigation"
               class="navbar-toggler"
               data-target="#navbarNav"
-              data-toggle="collapse" title="Menu"
+              data-toggle="collapse"
+              title="Menu"
               type="button">
         <span class="navbar-toggler-icon">
         </span>
@@ -36,8 +38,14 @@
       </div>
     </div>
     <div class="m-0 p-0 d-lg-flex">
-    <button (click)="translate.use('ru')" class="btn btn-dark m-1">RU</button>
-    <button (click)="translate.use('en')" class="btn btn-dark m-1">EN</button>
+
+      <button (click)="setLocale('ru')" class="btn btn-dark m-2">РУ</button>
+      <button (click)="setLocale('en')" class="btn btn-dark m-2">EN</button>
+
+        <span class="bg-white">
+          <img src="/src/assets/dark-theme.svg" alt="" class="bg-white">
+        </span>
+
     </div>
   </nav>
 </header>

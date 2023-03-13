@@ -10,7 +10,8 @@
       <tr>
       <tr>
         <th scope="row">{{'ROCKETS.IN_OPERATION' | translate}}</th>
-        <td> {{rocketsService.rockets[2].active ? "да" : "нет"}}</td>
+        <td *ngIf="rocketsService.rockets[2].active">{{'METRICS_SYSTEM.OPERATION_YES' | translate}}</td>
+        <td *ngIf="!rocketsService.rockets[2].active">{{'METRICS_SYSTEM.OPERATION_NO' | translate}}</td>
       </tr>
       <tr>
         <th scope="row">{{'ROCKETS.COUNTRY' | translate}}</th>
@@ -31,15 +32,17 @@
       <tr>
       <tr>
         <th scope="row">{{'ROCKETS.DESCRIPTION' | translate}}</th>
-        <td>{{rocketsService.rockets[2].description}}</td>
+        <td>{{'ROCKETS.DESCRIPTION_ROCKET_FALCON_HEAVY' | translate}}</td>
       </tr>
       <tr>
         <th scope="row">{{'ROCKETS.HEIGHT' | translate}}</th>
-        <td>{{(rocketsService.rockets[2].height.meters | number) + " м"}}</td>
+        <td>{{(rocketsService.rockets[2].height.meters | number)}}
+          {{"METRICS_SYSTEM.METERS" | translate}}</td>
       </tr>
       <tr>
         <th scope="row">{{'ROCKETS.DIAMETER' | translate}}</th>
-        <td>{{(rocketsService.rockets[2].diameter.meters | number) + " м"}}</td>
+        <td>{{(rocketsService.rockets[2].diameter.meters | number)}}
+          {{"METRICS_SYSTEM.METERS" | translate}}</td>
       </tr>
       <tr>
         <th scope="row">{{'ROCKETS.NUMBER_OF_STEPS' | translate}}</th>
@@ -55,19 +58,30 @@
       </tr>
       <tr>
         <th scope="row">{{'ROCKETS.TOTAL_WEIGHT' | translate}}</th>
-        <td>{{(rocketsService.rockets[2].mass.kg / 1000).toFixed(0)| number }} т</td>
+        <td>{{(rocketsService.rockets[2].mass.kg / 1000).toFixed(0)| number }}
+          {{"METRICS_SYSTEM.TONS" | translate}}
+        </td>
       </tr>
       <tr>
         <th scope="row">{{'ROCKETS.THRUST_SEE_LEVEL' | translate}}</th>
-        <td>{{(rocketsService.rockets[2].first_stage.thrust_sea_level.kN | number) + " кН" }}</td>
+        <td>{{(rocketsService.rockets[2].first_stage.thrust_sea_level.kN | number) }}
+          {{ 'METRICS_SYSTEM.NEWTON' | translate}}
+        </td>
       </tr>
       <tr>
         <th scope="row">{{'ROCKETS.THRUST_VACUUM' | translate}}</th>
-        <td>{{(rocketsService.rockets[2].first_stage.thrust_vacuum.kN | number) + " кН" }}</td>
+        <td>{{(rocketsService.rockets[2].first_stage.thrust_vacuum.kN | number)}}
+          {{ 'METRICS_SYSTEM.NEWTON' | translate}}
+        </td>
       </tr>
       <tr>
         <th scope="row">{{'ROCKETS.REUSABLE' | translate}}</th>
-        <td>{{rocketsService.rockets[2].first_stage.reusable ? "да" : "нет" }}</td>
+        <td *ngIf="rocketsService.rockets[2].first_stage.reusable">
+          {{'METRICS_SYSTEM.OPERATION_YES' | translate}}
+        </td>
+        <td *ngIf="!rocketsService.rockets[2].first_stage.reusable">
+          {{'METRICS_SYSTEM.OPERATION_NO' | translate}}
+        </td>
       </tr>
       <tr>
         <th scope="row">{{'ROCKETS.NUMBER_ENGINES' | translate}}</th>
@@ -75,23 +89,32 @@
       </tr>
       <tr>
         <th scope="row">{{'ROCKETS.FUEL' | translate}}</th>
-        <td>{{(rocketsService.rockets[2].first_stage.fuel_amount_tons | number) + " т"}}</td>
+        <td>{{(rocketsService.rockets[2].first_stage.fuel_amount_tons | number)}}
+          {{"METRICS_SYSTEM.TONS" | translate}}
+        </td>
       </tr>
       <tr>
         <th scope="row">{{'ROCKETS.OPERATING' | translate}}</th>
-        <td>{{rocketsService.rockets[2].first_stage.burn_time_sec + " c"}}</td>
+        <td>{{rocketsService.rockets[2].first_stage.burn_time_sec}}
+          {{'METRICS_SYSTEM.SECONDS'  | translate}}
+        </td>
       </tr>
       <tr>
         <th scope="row">{{'ROCKETS.THRUST_SECOND_STAGE' | translate}}</th>
-        <td>{{rocketsService.rockets[2].second_stage.thrust.kN + " кН"}}</td>
+        <td>{{rocketsService.rockets[2].second_stage.thrust.kN }}
+          {{ 'METRICS_SYSTEM.NEWTON' | translate}}
+        </td>
       </tr>
       <tr>
         <th scope="row">{{'ROCKETS.HEIGHT_HEAD_FAIRING' | translate}}</th>
-        <td>{{rocketsService.rockets[2].second_stage.payloads.composite_fairing.height.meters + " м"}}</td>
+        <td>{{rocketsService.rockets[2].second_stage.payloads.composite_fairing.height.meters}}
+          {{"METRICS_SYSTEM.METERS" | translate}}</td>
       </tr>
       <tr>
         <th scope="row">{{'ROCKETS.DIAMETER_HEAD_FAIRING' | translate}}</th>
-        <td>{{rocketsService.rockets[2].second_stage.payloads.composite_fairing.diameter.meters + " м"}}</td>
+        <td>{{rocketsService.rockets[2].second_stage.payloads.composite_fairing.diameter.meters}}
+          {{"METRICS_SYSTEM.METERS" | translate}}
+        </td>
       </tr>
       <tr>
         <th scope="row">{{'ROCKETS.MATERIAL' | translate}}</th>
@@ -99,11 +122,15 @@
       </tr>
       <tr>
         <th scope="row">{{'ROCKETS.FUEL_SECOND_STAGE' | translate}}</th>
-        <td>{{rocketsService.rockets[2].second_stage.fuel_amount_tons + " т"}}</td>
+        <td>{{rocketsService.rockets[2].second_stage.fuel_amount_tons}}
+          {{"METRICS_SYSTEM.TONS" | translate}}
+        </td>
       </tr>
       <tr>
         <th scope="row">{{'ROCKETS.TIME_SECOND_STAGE' | translate}}</th>
-        <td>{{rocketsService.rockets[2].second_stage.burn_time_sec + " с" }}</td>
+        <td>{{rocketsService.rockets[2].second_stage.burn_time_sec}}
+          {{'METRICS_SYSTEM.SECONDS' | translate}}
+        </td>
       </tr>
       <tr>
         <th scope="row">{{'ROCKETS.ENGINE_TYPE' | translate}}</th>
@@ -127,7 +154,9 @@
       </tr>
       <tr *ngFor="let payload of rocketsService.rockets[2].payload_weights">
         <th scope="row">{{payload.name}} ({{payload.id | uppercase}})</th>
-        <td>{{(payload.kg | number) + " кг"}}</td>
+        <td>{{(payload.kg | number) }}
+          {{ 'METRICS_SYSTEM.WEIGHT' | translate }}
+        </td>
       </tr>
       <tr class="text-center">
         <th class="text-lg-start" scope="row">{{'ROCKETS.IMAGES' | translate}}</th>

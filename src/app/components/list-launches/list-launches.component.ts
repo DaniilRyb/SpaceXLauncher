@@ -16,7 +16,7 @@ export class ListLaunchesComponent implements OnInit {
   @Input() missionListName: IMissionRockets[]
   name = ""
   date = ""
-  landing_success: boolean
+  landing_success: boolean | string
   count = "" // здесь лучше сделать все типы string так как input видимо не обрабатывает тип number
   IsShowed = false
   status = "Показать"
