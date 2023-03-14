@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { MissionService } from "../../service/mission.service";
+import { MissionService } from "../../service/mission.service/mission.service";
 import { FormControl } from "@angular/forms";
 import { map, Observable, startWith } from "rxjs";
 import { IMissionRockets } from "../../models/IMissionRockets";
@@ -64,14 +64,6 @@ export class ListLaunchesComponent implements OnInit {
   private _filter(value: string): string[] {
     return this.mission.filter(option => option.toLowerCase().includes(value.toLowerCase()));
   }
-
-  /* ngAfterContentChecked(): void {
-     console.log("AfterContentChecked");
-   }*/
-
-  /*ngOnChanges(changes: SimpleChanges): void {
-    console.log("changes", changes);
-  }*/
 
 
 }

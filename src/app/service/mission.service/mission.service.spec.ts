@@ -1,6 +1,6 @@
 import { MissionService } from "./mission.service";
 import { of } from "rxjs";
-import { ListLaunchesComponent } from "../components/list-launches/list-launches.component";
+import { ListLaunchesComponent } from "../../components/list-launches/list-launches.component";
 
 describe('CommentsComponent', () => {
   let service: MissionService;
