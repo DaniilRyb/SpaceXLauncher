@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RocketsService } from "../../service/rockets.service";
+import { RocketsService } from "../../service/rockets.service/rockets.service";
 
 @Component({
   selector: 'app-rockets',

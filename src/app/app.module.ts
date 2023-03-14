@@ -31,7 +31,6 @@ import { MdbCarouselModule } from "mdb-angular-ui-kit/carousel";
 import { MenuComponent } from './components/menu/menu.component';
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
-import { TestComponent } from './components/test/test.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -58,7 +57,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     CountLaunchRocketPipe,
     ScrollPageComponent,
     MenuComponent,
-    TestComponent,
   ],
   imports: [
     BrowserModule,

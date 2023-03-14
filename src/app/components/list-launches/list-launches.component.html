@@ -8,9 +8,9 @@
     <mat-form-field class="m-2 p-2">
       <mat-label>{{'DESCRIPTION_LAUNCH_PAGE.SEARCH.COUNT_LAUNCHES_ROCKETS' | translate}}</mat-label>
       <mat-select [(value)]="count">
-        <mat-option [value]="'Показать все'">{{'DESCRIPTION_LAUNCH_PAGE.SEARCH.SHOW_ALL' | translate | uppercase}}
+        <mat-option [value]="'Показать все'">{{'DESCRIPTION_LAUNCH_PAGE.SEARCH.SHOW_ALL' | translate}}
         </mat-option>
-        <mat-option *ngFor="let count of countsLaunch" [value]="count">{{count}}</mat-option>
+        <mat-option *ngFor="let count of countsLaunchRockets" [value]="count">{{count}}</mat-option>
       </mat-select>
     </mat-form-field>
 
@@ -44,7 +44,8 @@
     <mat-form-field appearance="fill" class="m-2 p-2">
       <mat-label>{{'DESCRIPTION_LAUNCH_PAGE.SEARCH.FIRST STAGE LANDING' | translate }}</mat-label>
       <mat-select [(value)]="landing_success">
-        <mat-option [value]="true">{{'DESCRIPTION_LAUNCH_PAGE.SEARCH.IS_SUCCESS.SUCCESSFUL' | translate }}</mat-option>
+        <mat-option [value]="true">{{'DESCRIPTION_LAUNCH_PAGE.SEARCH.IS_SUCCESS.SUCCESSFUL' | translate }}
+        </mat-option>
         <mat-option
           [value]="false">{{'DESCRIPTION_LAUNCH_PAGE.SEARCH.IS_SUCCESS.UNSUCCESSFUL' | translate }}</mat-option>
       </mat-select>
@@ -65,7 +66,6 @@
            class="p-0 m-1">{{'DESCRIPTION_LAUNCH_PAGE.SEARCH.BUTTON_IS_SHOW_MISSIONS.HIDE' | translate}}
           {{'DESCRIPTION_LAUNCH_PAGE.SEARCH.BUTTON_SHOW_MISSIONS' | translate}}
         </p>
-
       </button>
     </div>
     <div *ngIf="!IsShowed">

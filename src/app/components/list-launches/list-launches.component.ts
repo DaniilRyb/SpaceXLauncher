@@ -16,11 +16,10 @@ export class ListLaunchesComponent implements OnInit {
   @Input() missionListName: IMissionRockets[]
   name = ""
   date = ""
-  landing_success: boolean | string
+  landing_success: boolean | string = ''
   count = "" // здесь лучше сделать все типы string так как input видимо не обрабатывает тип number
   IsShowed = false
-  status = "Показать"
-  countsLaunch = ["1", "2", "3", "4", "5", "6", '7', "8", "9", "10", "11", "12", "13", "14"]
+  countsLaunchRockets = ["1", "2", "3", "4", "5", "6", '7', "8", "9", "10", "11", "12", "13", "14"]
   yearList = ["2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018",
     "2019", "2020", "2021", "2022"]
   myControl = new FormControl('');
@@ -50,20 +49,15 @@ export class ListLaunchesComponent implements OnInit {
   ngOnInit() {
     console.log("ngOnInit");
     this.mission = this._missionListNameAll()
-    //console.log(this.missionService.missions);
     this.missionListName = this.missionService.missions
     console.log(this.missionListName);
-    //this.mission = this._missionListNameAll()
-    //console.log("mission", this.mission);
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value || '')),
     )
   }
 
-  private _filter(value: string): string[] {
+  _filter(value: string): string[] {
     return this.mission.filter(option => option.toLowerCase().includes(value.toLowerCase()));
   }
-
-
 }
