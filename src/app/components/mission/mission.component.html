@@ -3,54 +3,79 @@
     <tbody>
     <tr>
       <th scope="col">
-        <h5>Миссия</h5>
+        <h5>{{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.MISSION' | translate}}
+        </h5>
       </th>
-      <th [title]="mission.cores[0].landing_success ? 'миссия успешная' : 'миссия не успешная'" scope="col">
+      <th scope="col">
         {{mission.name}}
       </th>
     </tr>
     <tr>
       <th scope="col">
-        <h5>Дата запуска</h5>
-      </th>
-      <th scope="col">{{mission.date_local | date: "medium"}}</th>
-    </tr>
-    <tr>
-      <th scope="col">
-        <h5>Номер запуска компании</h5>
-      </th>
-      <th scope="col">{{mission.flight_number}}</th>
-    </tr>
-    <tr>
-      <th scope="col">
-        <h5>Количество запусков ракеты</h5>
-      </th>
-      <th scope="col">{{mission.cores[0].flight !== null ? mission.cores[0].flight : "неизвестно" }}</th>
-    </tr>
-    <tr>
-      <th scope="col">
-        <h5>Возврат</h5>
-      </th>
-      <th scope="col">{{mission.cores[0].landing_attempt ? "запланирован" : "не запланирован"}}</th>
-    </tr>
-    <tr>
-      <th scope="col">
-        <h5>Посадка на плавучую платформу</h5>
-      </th>
-      <th scope="col">{{mission.cores[0].gridfins ? "запланирован" : "не запланирован"}}</th>
-    </tr>
-    <tr>
-      <th scope="col">
-        <h5>Посадка первой ступени
+        <h5>{{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.YEAR' | translate}}
         </h5>
       </th>
-      <th [style.color]="mission.cores[0].landing_success ? 'green' : 'red'" scope="col">
-        {{mission.cores[0].landing_success ? "успешная" : "не успешная/не запланирована"}}
+      <th scope="col">{{mission.date_local | date: "medium"}}
       </th>
     </tr>
     <tr>
       <th scope="col">
-        <h5>Логотип миссии</h5>
+        <h5>{{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.NUMBER_LAUNCH_COMPANY' | translate}}
+        </h5>
+      </th>
+      <th scope="col">{{mission.flight_number}}
+      </th>
+    </tr>
+    <tr>
+      <th scope="col">
+        <h5>{{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.COUNT_LAUNCH_COMPANY' | translate}}
+        </h5>
+      </th>
+      <th scope="col">{{mission.cores[0].flight !== null ? mission.cores[0].flight : "неизвестно" }}
+      </th>
+    </tr>
+    <tr>
+      <th scope="col">
+        <h5>{{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.RETURN' | translate}}
+        </h5>
+      </th>
+      <th *ngIf="mission.cores[0].landing_attempt"
+          scope="col">
+        {{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.LANDING_ATTEMPT.SCHEDULED' | translate}}
+      </th>
+      <th *ngIf="!mission.cores[0].landing_attempt"
+          scope="col">
+        {{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.LANDING_ATTEMPT.NOT_SCHEDULED' | translate}}
+      </th>
+    </tr>
+    <tr>
+      <th scope="col">
+        <h5>{{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.FLOATING_PLATFORM' | translate}}
+        </h5>
+      </th>
+      <th *ngIf="mission.cores[0].gridfins" scope="col">
+        {{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.LANDING_ATTEMPT.SCHEDULED' | translate}}
+      </th>
+      <th *ngIf="!mission.cores[0].gridfins" scope="col">
+        {{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.LANDING_ATTEMPT.NOT_SCHEDULED' | translate}}
+      </th>
+    </tr>
+    <tr>
+      <th scope="col">
+        <h5>{{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.LANDING_THE_FIRST_STAGE' | translate}}
+        </h5>
+      </th>
+      <th *ngIf="mission.cores[0].landing_success" [style.color]="'green'" scope="col">
+        {{ 'DESCRIPTION_LAUNCH_PAGE.SEARCH.IS_SUCCESS.SUCCESSFUL' | translate }}
+      </th>
+      <th *ngIf="!mission.cores[0].landing_success" [style.color]="'red'" scope="col">
+        {{ 'DESCRIPTION_LAUNCH_PAGE.SEARCH.IS_SUCCESS.UNSUCCESSFUL' | translate }}
+      </th>
+    </tr>
+    <tr>
+      <th scope="col">
+        <h5>{{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.LOGO' | translate}}
+        </h5>
       </th>
       <th scope="col">
         <img [src]="mission.links.patch.small" height="100" width="100">
@@ -58,40 +83,51 @@
     </tr>
     <tr>
       <th scope="col">
-        <h5>Описание</h5>
+        <h5>{{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.DESCRIPTION_MISSION' | translate}}
+        </h5>
       </th>
-      <th scope="col">{{mission.details ? mission.details : "-"}}</th>
-    </tr>
-    <tr>
-      <th scope="col">
-        <h5>Wikipedia</h5></th>
-      <th scope="col">
-        <a [href]="mission.links.wikipedia" class="text-decoration-none">Статья</a>
+      <th scope="col">{{mission.details ? mission.details : "-"}}
       </th>
     </tr>
     <tr>
       <th scope="col">
-        <h5>Видео запуска</h5>
+        <h5>Wikipedia</h5>
       </th>
       <th scope="col">
-        <a [href]="mission.links.webcast" class="text-decoration-none">Трансляция</a>
-      </th>
-    </tr>
-    <tr>
-      <th scope="col">
-        <h5>Описание ракет</h5>
-      </th>
-      <th scope="col">
-        <a class="text-decoration-none" routerLink="/rockets">Ракеты</a>
+        <a [href]="mission.links.wikipedia"
+           class="text-decoration-none">
+          {{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.DESCRIPTION_MISSION' | translate}}
+        </a>
       </th>
     </tr>
     <tr>
       <th scope="col">
-        <h5>ID миссии</h5>
+        <h5>{{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.VIDEO_LAUNCH' | translate}}
+        </h5>
+      </th>
+      <th scope="col">
+        <a [href]="mission.links.webcast" class="text-decoration-none">
+          {{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.VIDEO_LAUNCH' | translate}}
+        </a>
+      </th>
+    </tr>
+    <tr>
+      <th scope="col">
+        <h5>{{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.DESCRIPTION_ROCKETS' | translate}}
+        </h5>
+      </th>
+      <th scope="col">
+        <a class="text-decoration-none" routerLink="/rockets">{{'MAIN_PAGE.HEADER.ROCKETS_PAGE' | translate}}
+        </a>
+      </th>
+    </tr>
+    <tr>
+      <th scope="col">
+        <h5>{{'DESCRIPTION_LAUNCH_PAGE.DESCRIPTION_MISSION_LIST.MISSION_ID' | translate}}
+        </h5>
       </th>
       <th scope="col">{{mission.id}}</th>
     </tr>
     </tbody>
   </table>
 </div>
-

@@ -11,6 +11,8 @@ export class MissionComponent {
 
   @Input() mission: IMissionRockets
 
+  //@Input() index: number
+
   constructor() {
   }
 

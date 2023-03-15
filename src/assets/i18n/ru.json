@@ -1,0 +1,105 @@
+{
+  "MAIN_PAGE": {
+    "HEADER": {
+      "LOGO_DESC": "Сервис для отслеживания космических запусков",
+      "HOME_PAGE": "Главная",
+      "LAUNCH_PAGE": "Запуски SpaceX",
+      "ROCKETS_PAGE": "Ракеты"
+    },
+    "MAIN": {
+      "DESCRIPTION": "ПРИВЕТ! ЭТОТ СЕРВИС БЫЛ СОЗДАН ДЛЯ ОТСЛЕЖИВАНИЯ ЗАПУСКОВ КОМПАНИИ SPACEX. ЗДЕСЬ ВЫ МОЖЕТЕ НАЙТИ ИНФОРМАЦИЮ О ПРОШЕДШИХ ЗАПУСКАХ И ОПИСАНИЯ РАКЕТ"
+    }
+  },
+  "DESCRIPTION_LAUNCH_PAGE": {
+    "TITLE_PAGE": "Описание запусков",
+    "SEARCH_MISSIONS": "Поиск миссий",
+    "SEARCH": {
+      "SHOW_ALL": "Показать все",
+      "COUNT_LAUNCHES_ROCKETS": "Количество запусков ракет",
+      "YEAR": "Год миссии",
+      "YEAR_SELECT": "Выбрать год",
+      "MISSION_NAME": "Название мисии",
+      "PLACEHOLDER": "Введите название миссии",
+      "FIRST STAGE LANDING": "Посадка первой ступени",
+      "NAME_MISSION_PLACEHOLDER": "Введите название миссии",
+      "IS_SUCCESS": {
+        "SUCCESSFUL": "Успешная",
+        "UNSUCCESSFUL": "Неуспешная"
+      },
+      "DETAILED_DESCRIPTION": "Подробное описание выбранной миссии",
+      "BUTTON_SHOW_MISSIONS": "миссии",
+      "BUTTON_IS_SHOW_MISSIONS": {
+        "SHOW": "Показать",
+        "HIDE": "Скрыть"
+      }
+    },
+    "DESCRIPTION_MISSION_LIST": {
+      "MISSION": "Миссия",
+      "YEAR": "Дата",
+      "NUMBER_LAUNCH_COMPANY": "Номер запуска компании",
+      "COUNT_LAUNCH_COMPANY": "Количество запусков ракет",
+      "RETURN": "Возврат",
+      "FLOATING_PLATFORM": "Посадка на плавучую платформу",
+      "LOGO": "Логотип мисии",
+      "LANDING_THE_FIRST_STAGE": "Посадка первой ступени",
+      "DESCRIPTION_MISSION": "Описание миссии",
+      "VIDEO_LAUNCH": "Трансляция запуска",
+      "DESCRIPTION_ROCKETS": "Описание ракеты",
+      "MISSION_ID": "ID Миссии",
+      "LANDING_ATTEMPT": {
+        "SCHEDULED": "запланирован",
+        "NOT_SCHEDULED": "не запланирован/не успешный"
+      }
+    }
+  },
+  "ROCKETS": {
+    "DETAILED_DESCRIPTION": "Подробное описание",
+    "DESCRIPTION_ROCKETS": "Описание ракет",
+    "ROCKETS_FAMILY": "Семейство ракет",
+    "IN_OPERATION": "В эксплуатации",
+    "COUNTRY": "Страна",
+    "COMPANY": "Компания",
+    "FIRST_FLIGHT": "Первый полет",
+    "LAUNCH_COST": "Стоимость запуска",
+    "DESCRIPTION": "Описание",
+    "DESCRIPTION_ROCKET_FALCON1": "Falcon 1 был одноразовой системой запуска, частной разработкой и производством SpaceX в 2006-2009 годах. 28 сентября 2008 года Falcon 1 стала первой частной ракетой-носителем на жидком топливе, выведенной на околоземную орбиту.",
+    "DESCRIPTION_ROCKET_FALCON9": "Falcon 9 - это двухступенчатая ракета, разработанная и изготовленная компанией SpaceX для надежной и безопасной транспортировки спутников и космического корабля Dragon на орбиту.",
+    "DESCRIPTION_ROCKET_FALCON_HEAVY": "Обладая способностью выводить на орбиту более 54 метрических тонн (119 000 фунтов) - масса, эквивалентная массе реактивного лайнера 737, загруженного пассажирами, экипажем, багажом и топливом, - Falcon Heavy может поднять более чем в два раза больше полезной нагрузки, чем следующий ближайший эксплуатационный аппарат, Delta IV Heavy, при стоимости в одну треть меньше.",
+    "DESCRIPTION_ROCKET_STARSHIP": "Starship и сверхтяжелая ракета представляют собой полностью многоразовую транспортную систему, предназначенную для обслуживания всех потребностей земной орбиты, а также Луны и Марса. Этот двухступенчатый аппарат, состоящий из сверхтяжелой ракеты-носителя и звездолета, в конечном итоге заменит Falcon 9, Falcon Heavy и Dragon.",
+    "HEIGHT": "Высота",
+    "DIAMETER": "Диаметр",
+    "NUMBER_OF_STEPS": "Количество ступеней",
+    "NUMBERS_OF_SIDE_BOOSTERS": "Количество боковых ускорителей",
+    "ARTICLE": "Статья",
+    "TOTAL_WEIGHT": "Общий вес",
+    "THRUST_SEE_LEVEL": "Тяга первой ступени над уровнем моря",
+    "THRUST_VACUUM": "Тяга первой ступени в вакууме",
+    "REUSABLE": "Многоразовая",
+    "NUMBER_ENGINES": "Количество двигателей первой ступени",
+    "FUEL": "Масса топлива",
+    "OPERATING": "Время работы первой ступени",
+    "THRUST_SECOND_STAGE": "Тяга второй ступени",
+    "HEIGHT_HEAD_FAIRING": "Высота головного обтекателя",
+    "DIAMETER_HEAD_FAIRING": "Диаметр головного обтекателя",
+    "MATERIAL": "Материал",
+    "FUEL_SECOND_STAGE": "Масса топлива второй ступени",
+    "TIME_SECOND_STAGE": "Общее время работы второй ступени",
+    "ENGINE_TYPE": "Тип двигателя",
+    "FIRST_STAGE_FUEL": "Топливо первой ступени",
+    "SECOND_STAGE_FUEL": "Топливо второй ступени",
+    "NUMBER_LANDING_LEGS": "Количество посадочных опор",
+    "MATERIAL_LEGS": "Материал",
+    "IMAGES": "Изображения"
+  },
+  "FIRST_LAUNCH": "Первый запуск",
+  "BUTTON_UP": "Наверх",
+  "METRICS_SYSTEM": {
+    "OPERATION_YES": "да",
+    "OPERATION_NO": "нет",
+    "METERS": "м",
+    "TONS": "т",
+    "SECONDS": "c",
+    "NEWTON": "кН",
+    "WEIGHT": "кг"
+  }
+}

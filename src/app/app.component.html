@@ -1,37 +1,56 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
     <div class="container-fluid">
       <div>
         <img
           alt="SpaceX_logo"
-          class="d-inline-block align-top" height="40"
+          class="d-inline-block align-top img-logo" height="40"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/SpaceX-Logo-Xonly.svg/1280px-SpaceX-Logo-Xonly.svg.png"
           width="100">
       </div>
       <div class="navbar-brand pointer-event pointer" routerLink="/">SpaceX Launcher<br>
-        <span class="text-small fw-bold">
-        Сервис для отслеживания космичеких запусков
-      </span>
+        <span class="text-small fw-bold">{{"MAIN_PAGE.HEADER.LOGO_DESC" | translate }}</span>
       </div>
+      <button (click)="menu.show()"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              class="navbar-toggler"
+              data-target="#navbarNav"
+              data-toggle="collapse"
+              title="Menu"
+              type="button">
+        <span class="navbar-toggler-icon">
+        </span>
+      </button>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav nav mr-auto mb-2 mb-lg-0 p-3 text-uppercase">
           <li class="nav-item active">
-            <a class="nav-link" routerLink="/">Главная</a>
+            <a class="nav-link" routerLink="/">{{'MAIN_PAGE.HEADER.HOME_PAGE' | translate }}</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" routerLink="/launches">Запуски SpaceX</a>
+            <a class="nav-link" routerLink="/launches">{{"MAIN_PAGE.HEADER.LAUNCH_PAGE" | translate}}</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" routerLink="/rockets">ракеты</a>
+            <a class="nav-link" routerLink="/rockets">{{"MAIN_PAGE.HEADER.ROCKETS_PAGE" | translate}}</a>
           </li>
         </ul>
       </div>
     </div>
+    <div class="m-0 p-0 d-lg-flex">
+
+      <button (click)="setLocale('ru')" class="btn btn-dark m-2">РУ</button>
+      <button (click)="setLocale('en')" class="btn btn-dark m-2">EN</button>
+
+        <span class="bg-white">
+          <img src="/src/assets/dark-theme.svg" alt="" class="bg-white">
+        </span>
+
+    </div>
   </nav>
 </header>
-
-<router-outlet>
-</router-outlet>
+<app-menu #menu/>
+<router-outlet/>
 
 <!--<footer class="footer">
 <div>

@@ -1,0 +1,191 @@
+<div>
+  <h2 class="font-bold text-center mt-4 text-uppercase fw-bolder">{{'ROCKETS.DETAILED_DESCRIPTION' | translate}}</h2>
+  <div class="form-check justify-content-center m-auto p-5 font">
+    <table class="table table-striped table-hover">
+      <tbody>
+      <tr>
+        <th scope="row">{{'ROCKETS.ROCKETS_FAMILY' | translate}}</th>
+        <td class="p-2">{{rocketsService.rockets[1].name}}</td>
+      </tr>
+      <tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.IN_OPERATION' | translate}}</th>
+        <td *ngIf="rocketsService.rockets[1].active">{{'METRICS_SYSTEM.OPERATION_YES' | translate}}</td>
+        <td *ngIf="!rocketsService.rockets[1].active">{{'METRICS_SYSTEM.OPERATION_NO' | translate}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.COUNTRY' | translate}}</th>
+        <td>{{rocketsService.rockets[1].country}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.COMPANY' | translate}}</th>
+        <td>{{rocketsService.rockets[1].company}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.FIRST_FLIGHT' | translate}}</th>
+        <td>{{rocketsService.rockets[1].first_flight | date }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.LAUNCH_COST' | translate}}</th>
+        <td>{{rocketsService.rockets[1].cost_per_launch | currency }}</td>
+      </tr>
+      <tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.DESCRIPTION' | translate}}</th>
+        <td>{{'ROCKETS.DESCRIPTION_ROCKET_FALCON9' | translate}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.HEIGHT' | translate}}</th>
+        <td>{{(rocketsService.rockets[1].height.meters | number)}}
+          {{"METRICS_SYSTEM.METERS" | translate}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.DIAMETER' | translate}}</th>
+        <td>{{(rocketsService.rockets[1].diameter.meters | number)}}
+          {{"METRICS_SYSTEM.METERS" | translate}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.NUMBER_OF_STEPS' | translate}}</th>
+        <td>{{rocketsService.rockets[1].stages}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.NUMBERS_OF_SIDE_BOOSTERS' | translate}}</th>
+        <td>{{rocketsService.rockets[1].boosters}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.ARTICLE' | translate}}</th>
+        <td><a [href]="rocketsService.rockets[1].wikipedia" class="text-decoration-none">Wikipedia</a></td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.TOTAL_WEIGHT' | translate}}</th>
+        <td>{{(rocketsService.rockets[1].mass.kg / 1000).toFixed(0)| number }}
+          {{"METRICS_SYSTEM.TONS" | translate}}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.THRUST_SEE_LEVEL' | translate}}</th>
+        <td>{{(rocketsService.rockets[1].first_stage.thrust_sea_level.kN | number) }}
+          {{ 'METRICS_SYSTEM.NEWTON' | translate}}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.THRUST_VACUUM' | translate}}</th>
+        <td>{{(rocketsService.rockets[1].first_stage.thrust_vacuum.kN | number)}}
+          {{ 'METRICS_SYSTEM.NEWTON' | translate}}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.REUSABLE' | translate}}</th>
+        <td *ngIf="rocketsService.rockets[1].first_stage.reusable">
+          {{'METRICS_SYSTEM.OPERATION_YES' | translate}}
+        </td>
+        <td *ngIf="!rocketsService.rockets[1].first_stage.reusable">
+          {{'METRICS_SYSTEM.OPERATION_NO' | translate}}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.NUMBER_ENGINES' | translate}}</th>
+        <td>{{rocketsService.rockets[1].first_stage.engines}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.FUEL' | translate}}</th>
+        <td>{{(rocketsService.rockets[1].first_stage.fuel_amount_tons | number)}}
+          {{"METRICS_SYSTEM.TONS" | translate}}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.OPERATING' | translate}}</th>
+        <td>{{rocketsService.rockets[1].first_stage.burn_time_sec}}
+          {{'METRICS_SYSTEM.SECONDS'  | translate}}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.THRUST_SECOND_STAGE' | translate}}</th>
+        <td>{{rocketsService.rockets[1].second_stage.thrust.kN }}
+          {{ 'METRICS_SYSTEM.NEWTON' | translate}}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.HEIGHT_HEAD_FAIRING' | translate}}</th>
+        <td>{{rocketsService.rockets[1].second_stage.payloads.composite_fairing.height.meters}}
+          {{"METRICS_SYSTEM.METERS" | translate}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.DIAMETER_HEAD_FAIRING' | translate}}</th>
+        <td>{{rocketsService.rockets[1].second_stage.payloads.composite_fairing.diameter.meters}}
+          {{"METRICS_SYSTEM.METERS" | translate}}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.MATERIAL' | translate}}</th>
+        <td>{{rocketsService.rockets[1].second_stage.payloads.option_1 | titlecase }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.FUEL_SECOND_STAGE' | translate}}</th>
+        <td>{{rocketsService.rockets[1].second_stage.fuel_amount_tons}}
+          {{"METRICS_SYSTEM.TONS" | translate}}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.TIME_SECOND_STAGE' | translate}}</th>
+        <td>{{rocketsService.rockets[1].second_stage.burn_time_sec}}
+          {{'METRICS_SYSTEM.SECONDS' | translate}}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.ENGINE_TYPE' | translate}}</th>
+        <td>{{rocketsService.rockets[1].engines.type | titlecase }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.FIRST_STAGE_FUEL' | translate}}</th>
+        <td>{{rocketsService.rockets[1].engines.propellant_1 | titlecase}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.SECOND_STAGE_FUEL' | translate}}</th>
+        <td>{{rocketsService.rockets[1].engines.propellant_2 | titlecase}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.NUMBER_LANDING_LEGS' | translate}}</th>
+        <td>{{rocketsService.rockets[1].landing_legs.number }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{'ROCKETS.MATERIAL_LEGS' | translate}}</th>
+        <td>{{rocketsService.rockets[1].landing_legs.material | titlecase }}</td>
+      </tr>
+      <tr *ngFor="let payload of rocketsService.rockets[2].payload_weights">
+        <th scope="row">{{payload.name}} ({{payload.id | uppercase}})</th>
+        <td>{{(payload.kg | number) }}
+          {{ 'METRICS_SYSTEM.WEIGHT' | translate }}
+        </td>
+      </tr>
+      <tr class="text-center">
+        <th class="text-lg-start" scope="row">{{'ROCKETS.IMAGES' | translate}}</th>
+        <td>
+          <ul class="list-unstyled">
+            <li *ngFor="let img of rocketsService.rockets[1].flickr_images" class="p-2">
+              <img [alt]="rocketsService.rockets[1].name"
+                   [src]="img"
+                   [title]="rocketsService.rockets[1].name + ' rocket image'"
+                   class="img-fluid h-auto w-100"
+                   height="400"
+                   width="700">
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <!-- <tr class="text-center">
+         <th scope="row">Видео</th>
+         <td>
+           <iframe height="400"
+                   src="https://www.youtube.com/embed/wbSwFU6tY1c"
+                   title="Starship | SN10 | High-Altitude Flight Test"
+                   width="700"
+                   class="img-fluid h-auto w-100">
+           </iframe>
+         </td>
+       </tr>-->
+      </tbody>
+    </table>
+  </div>
+  <app-scroll-page/>
+</div>

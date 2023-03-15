@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { IRocket } from "../models/IRocket";
+import { IRocket } from "../../models/IRocket";
 
 @Injectable({
   providedIn: 'root'
