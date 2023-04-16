@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IRocket } from "../../models/IRocket";
 
 @Component({
@@ -6,14 +6,9 @@ import { IRocket } from "../../models/IRocket";
   templateUrl: './rocket.component.html',
   styleUrls: ['./rocket.component.css']
 })
-export class RocketComponent implements OnInit {
+export class RocketComponent {
 
   @Input() rocketType: IRocket
 
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
 
 }

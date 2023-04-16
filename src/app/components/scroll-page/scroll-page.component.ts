@@ -7,9 +7,6 @@ import { Component, HostListener } from '@angular/core';
 })
 export class ScrollPageComponent {
 
-  constructor() {
-  }
-
   @HostListener("click", ["$event"])
   scroll(event: Event) {
     window.scrollTo(0, 0);

@@ -3,3 +3,25 @@
   top: 30%;
   text-align: center;
 }
+
+.text-color {
+  color: #fff;
+}
+.slider-display {
+  display: block;
+}
+
+.mobile-text {
+  display: none;
+}
+@media (max-width: 950px) {
+  .slider-display {
+    display: none;
+  }
+  .text-color {
+    color: #000;
+  }
+  .mobile-text {
+    display: block;
+  }
+}

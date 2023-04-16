@@ -13,8 +13,5 @@ export class MissionComponent {
 
   //@Input() index: number
 
-  constructor() {
-  }
-
 
 }

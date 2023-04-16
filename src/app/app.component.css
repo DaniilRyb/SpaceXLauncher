@@ -12,10 +12,17 @@
   cursor: pointer;
 }
 
+.logo-desc-mobile-none {
+  display: block;
+}
+
 
 @media (max-width: 500px) {
   .img-logo {
-    width: 60px;
+    width: 70px;
+  }
+  .logo-desc-mobile-none {
+    display: none;
   }
 
 }
