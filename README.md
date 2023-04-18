@@ -1,7 +1,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/81e1e7a9-7f42-4cb6-94ad-2ec7deac1112/deploy-status)](https://app.netlify.com/sites/spacex-launcher-service/deploys)
 
 # Сервис SpaceXLauncher
-## [Сервис SpaceXLauncher](https://develop-test--charming-marshmallow-66ac51.netlify.app)
+## [Сервис SpaceXLauncher](https://spacex-launcher-service.netlify.app/)
 
 
 ### Данный сервис позволяет отслеживать запуски компании SpaceX 
